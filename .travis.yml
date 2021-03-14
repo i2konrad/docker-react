@@ -23,5 +23,5 @@ script: # commands needed for running tests, if return status =! 0 Travis will a
 #   on: # deploy only the mentioned branch in this case "master"
 #     branch: master
 
-# access_key_id: $AWS_ACCESS_KEY
-# secret_access_key: $AWS_SECRET_KEY
+#  access_key_id: $AWS_ACCESS_KEY
+#  secret_access_key: $AWS_SECRET_KEY
