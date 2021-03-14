@@ -1,0 +1,12 @@
+language: generic
+sudo: required # docker needs supersuser permissions
+services:
+  - docker # travis CI will automatically install docker
+
+before_install: # series of steps that have to happen before we start our tests
+  # tagging convention "docker_username/git_repo_name"
+  # we use Dockerfile.dev because for testing we need to install additional dependencies that are not needed in PROD env
+  - docker build -t truebot/docker-react -f Dockerfile.dev .
+
+script: # commands needed for running tests, if return status =! 0 Travis will assume there was error
+  - docker run -e CI=true truebot/docker-react npm run test
