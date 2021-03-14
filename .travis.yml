@@ -10,3 +10,18 @@ before_install: # series of steps that have to happen before we start our tests
 
 script: # commands needed for running tests, if return status =! 0 Travis will assume there was error
   - docker run -e CI=true truebot/docker-react npm run test
+# deploy: # commands to deploy to AWS
+#   provider: elasticbeanstalk # that informs what AWS service we will use
+#   region: "us-east-2"
+#   app: "docker-react"
+#   env: "Dockerreact-env"
+
+#   # bucket_name is s3 server name
+#   # how to find: search for s3, open, search for provider & region
+#   bucket_name: "elasticbeanstalk-us-east-2-161456857908"
+#   bucket_path: "docker-react"
+#   on: # deploy only the mentioned branch in this case "master"
+#     branch: master
+
+# access_key_id: $AWS_ACCESS_KEY
+# secret_access_key: $AWS_SECRET_KEY
